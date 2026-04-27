@@ -17,9 +17,9 @@ export default class Cl_vAcademia {
     constructor();
     get btInscribir(): HTMLButtonElement;
     get vInscripcion(): Cl_vInscripcion;
-    reportarInscripcion(datos: IReporte): void;
     onInscribir(callback: () => void): void;
     ocultarReporte(): void;
     MostrarReporte(): void;
+    reportarInscripcion(datos: IReporte): void;
 }
 //# sourceMappingURL=Cl_vAcademia.d.ts.map

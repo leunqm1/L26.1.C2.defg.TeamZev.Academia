@@ -15,7 +15,6 @@ export default class Cl_vAcademia {
     _contenedorReporte;
     constructor() {
         this._btInscribir = document.getElementById("btInscribir");
-        // Inicializamos etiquetas de resultados
         this._lblIngresos = document.getElementById("lblIngresos");
         this._lbldescuento = document.getElementById("lbldescuento");
         this._lblingresosD = document.getElementById("lblingresosD");
@@ -31,19 +30,6 @@ export default class Cl_vAcademia {
     }
     get btInscribir() { return this._btInscribir; }
     get vInscripcion() { return this._vInscripcion; }
-    reportarInscripcion(datos) {
-        this._lblIngresos.textContent = datos.ingresos.toFixed(2);
-        this._lbldescuento.textContent = datos.descuentos.toFixed(2);
-        this._lblingresosD.textContent = datos.ingresosD.toFixed(2);
-        this._lblPTotal.textContent = datos.pTotal.toFixed(0);
-        this._lblPIngles.textContent = datos.pIngles.toFixed(2) + "%";
-        this._lblPComp.textContent = datos.pComp.toFixed(2) + "%";
-        this._lblPIA.textContent = datos.pIA.toFixed(2) + "%";
-        this._lblPMenores.textContent = datos.pMenores.toFixed(2) + "%";
-        this._lblPMayores.textContent = datos.pMayores.toFixed(2) + "%";
-        this._lblPTercera.textContent = datos.pTerceraEdad.toFixed(2) + "%";
-        this.MostrarReporte();
-    }
     onInscribir(callback) {
         this.btInscribir.onclick = () => callback();
     }
@@ -56,6 +42,19 @@ export default class Cl_vAcademia {
         if (this._contenedorReporte) {
             this._contenedorReporte.style.display = "block";
         }
+    }
+    reportarInscripcion(datos) {
+        this._lblIngresos.textContent = datos.ingresos.toFixed(2);
+        this._lbldescuento.textContent = datos.descuentos.toFixed(2);
+        this._lblingresosD.textContent = datos.ingresosD.toFixed(2);
+        this._lblPTotal.textContent = datos.pTotal.toFixed(0);
+        this._lblPIngles.textContent = datos.pIngles.toFixed(2) + "%";
+        this._lblPComp.textContent = datos.pComp.toFixed(2) + "%";
+        this._lblPIA.textContent = datos.pIA.toFixed(2) + "%";
+        this._lblPMenores.textContent = datos.pMenores.toFixed(2) + "%";
+        this._lblPMayores.textContent = datos.pMayores.toFixed(2) + "%";
+        this._lblPTercera.textContent = datos.pTerceraEdad.toFixed(2) + "%";
+        this.MostrarReporte();
     }
 }
 //# sourceMappingURL=Cl_vAcademia.js.map
