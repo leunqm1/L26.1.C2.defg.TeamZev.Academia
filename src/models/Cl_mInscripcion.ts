@@ -26,7 +26,7 @@ export default class Cl_mInscripcion extends Cl_mPersona{
         let porcentaje = 0;
         if (this.edad < 18) {
             porcentaje = 0.20;
-        } else if ((this.edad >= 50 && this.sexo === "F") || (this.edad >= 60 && this.sexo === "M")) {
+        } else if ((this.edad > 50 && this.sexo === "F") || (this.edad > 60 && this.sexo === "M")) {
             porcentaje = 0.40;
         }
         return this.inversionBase() * porcentaje;

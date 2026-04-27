@@ -12,12 +12,6 @@ export default class Cl_mAcademia {
     private _acumIngresosD;
     constructor();
     get contEstudiantes(): number;
-    get contIngles(): number;
-    get contComputacion(): number;
-    get contIA(): number;
-    get contMenorEdad(): number;
-    get contMayorEdad(): number;
-    get contTerceraEdad(): number;
     get acumDescuento(): number;
     get acumInversion(): number;
     get acumIngresosD(): number;

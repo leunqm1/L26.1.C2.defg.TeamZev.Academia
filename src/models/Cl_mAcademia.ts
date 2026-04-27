@@ -28,24 +28,7 @@ export default class Cl_mAcademia{
     get contEstudiantes(): number{
         return this._contEstudiantes;
     }
-    get contIngles(): number{
-        return this._contIngles;
-    }
-    get contComputacion(): number{
-        return this._contComputacion;
-    }
-    get contIA(): number{
-        return this._contIA;
-    }
-    get contMenorEdad(): number{
-        return this._contMenorEdad;
-    }
-    get contMayorEdad(): number{
-        return this._contMayorEdad;
-    }
-    get contTerceraEdad(): number{
-        return this._contTerceraEdad;
-    }
+    
     get acumDescuento(): number{
         return this._acumDescuento;
     }
@@ -65,7 +48,9 @@ export default class Cl_mAcademia{
             this._contIA++;
         if (ins.edad < 18)
             this._contMenorEdad++;
-        else if ((ins.edad >= 50 && ins.sexo === "F") || (ins.edad >= 60 && ins.sexo === "M"))
+        else if ((ins.edad >= 18 && ins.edad <= 50 && ins.sexo === "F") || (ins.edad >= 18 && ins.edad <= 60 && ins.sexo === "M"))
+            this._contMayorEdad++;
+        else if ((ins.edad > 50 && ins.sexo === "F") || (ins.edad > 60 && ins.sexo === "M"))
             this._contTerceraEdad++;
         this._acumDescuento += ins.calculardescuento();
         this._acumInversion += ins.inversionBase();
