@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Academia - Vista Plain (UCLA)</title>
+</head>
+<body>
+    <h1>Gestión de Inscripciones - DCYT</h1>
+    
+    <button id="btInscribir">NUEVA INSCRIPCIÓN</button>
+
+    <hr>
+
+    <div id="contenedorReporte" style="display: none;">
+        <h3>Reporte General</h3>
+        <ul>
+            <li>Ingresos Totales: $<span id="lblIngresos">0.00</span></li>
+            <li>Descuentos: $<span id="lbldescuento">0.00</span></li>
+            <li>Ingresos con Descuento: $<span id="lblingresosD">0.00</span></li>
+            <li>Total Estudiantes: <span id="lblPTotal">0</span></li>
+        </ul>
+
+        <h4>Estadísticas por Curso:</h4>
+        <ul>
+            <li>% Inglés: <span id="lblPIngles">0</span>%</li>
+            <li>% Computación: <span id="lblPComp">0</span>%</li>
+            <li>% IA: <span id="lblPIA">0</span>%</li>
+        </ul>
+
+        <h4>Estadísticas por Edad:</h4>
+        <ul>
+            <li>% Menores: <span id="lblPMenores">0</span>%</li>
+            <li>% Regulares: <span id="lblPMayores">0</span>%</li>
+            <li>% 3ra Edad: <span id="lblPTercera">0</span>%</li>
+        </ul>
+    </div>
+
+    <div id="seccionFormulario" style="display: none; border: 2px solid #000; padding: 20px; width: 320px; margin-top: 20px;">
+        <h3>Datos del Nuevo Estudiante</h3>
+        
+        <label>Nombre:</label><br>
+        <input type="text" id="inNombre"><br><br>
+        
+        <label>Apellido:</label><br>
+        <input type="text" id="inApellido"><br><br>
+
+        <label>Cédula:</label><br>
+        <input type="number" id="inCedula"><br><br>
+        
+        <label>Sexo:</label><br>
+        <select id="inSexo">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+        </select><br><br>
+        
+        <label>Fecha de Nacimiento:</label><br>
+        <input type="date" id="inFecha"><br><br>
+        
+        <label>Curso a Inscribir:</label><br>
+        <select id="inLeerOpcion">
+            <option value="1">Inglés ($20)</option>
+            <option value="2">Computación ($25)</option>
+            <option value="3">Inteligencia Artificial ($30)</option>
+        </select><br><br>
+
+        <button id="btAceptar">ACEPTAR</button>
+        <button id="btCancelar">CANCELAR</button>
+    </div>
+
+    <script type="module" src="./dist/controllers/Cl_cAcademia.js"></script>
+</body>
+</html>
