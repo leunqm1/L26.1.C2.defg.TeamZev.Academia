@@ -23,7 +23,7 @@ export default class Cl_cInscripcion {
        
         this.vistaAcademia.vInscripcion.onCancelar(() => {
             this.vistaAcademia.vInscripcion.ocultar();
-            this.vistaAcademia.MostrarReporte();
+            this.vistaAcademia.mostrarReporte();
         });
        
     }
@@ -51,6 +51,9 @@ export default class Cl_cInscripcion {
         this.vistaAcademia.reportarInscripcion({
             ingresos: this.modeloAcademia.acumInversion,
             descuentos: this.modeloAcademia.acumDescuento,
+            descuentoIngles: this.modeloAcademia.acumDescuentoIngles,
+            descuentoComputacion: this.modeloAcademia.acumDescuentoComputacion,
+            descuentoIA: this.modeloAcademia.acumDescuentoIA,
             ingresosD: this.modeloAcademia.acumIngresosD,
             pTotal: this.modeloAcademia.contEstudiantes,
             pIngles: this.modeloAcademia.porcIngles(),

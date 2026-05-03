@@ -19,7 +19,7 @@ export default class Cl_vAcademia {
     get vInscripcion(): Cl_vInscripcion;
     onInscribir(callback: () => void): void;
     ocultarReporte(): void;
-    MostrarReporte(): void;
+    mostrarReporte(): void;
     reportarInscripcion(datos: IReporte): void;
 }
 //# sourceMappingURL=Cl_vAcademia.d.ts.map

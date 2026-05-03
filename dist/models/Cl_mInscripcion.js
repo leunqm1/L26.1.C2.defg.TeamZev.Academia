@@ -21,7 +21,7 @@ export default class Cl_mInscripcion extends Cl_mPersona {
         }
         return inversion;
     }
-    calculardescuento() {
+    calcularDescuento() {
         let porcentaje = 0;
         if (this.edad < 18) {
             porcentaje = 0.20;
@@ -32,7 +32,7 @@ export default class Cl_mInscripcion extends Cl_mPersona {
         return this.inversionBase() * porcentaje;
     }
     ingresosD() {
-        return this.inversionBase() - this.calculardescuento();
+        return this.inversionBase() - this.calcularDescuento();
     }
 }
 //# sourceMappingURL=Cl_mInscripcion.js.map

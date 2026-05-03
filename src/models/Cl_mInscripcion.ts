@@ -3,7 +3,7 @@ import Cl_mPersona from "./Cl_mPersona.js";
 export default class Cl_mInscripcion extends Cl_mPersona{
     private _leerOpcion: number;
 
-    constructor(nombre: string, apellido: string, cedula: string, sexo: string, fechaNacimiento: Date, _leerOpcion: number, ){
+    constructor(nombre: string, apellido: string, cedula: string, sexo: string, fechaNacimiento: Date, _leerOpcion: number){
         super ( nombre, apellido, cedula, sexo, fechaNacimiento);
         this._leerOpcion = _leerOpcion;
 
@@ -22,7 +22,7 @@ export default class Cl_mInscripcion extends Cl_mPersona{
              inversion = 30;  }
                 return inversion;}
     
-    calculardescuento(): number {
+    calcularDescuento(): number {
         let porcentaje = 0;
         if (this.edad < 18) {
             porcentaje = 0.20;
@@ -33,7 +33,7 @@ export default class Cl_mInscripcion extends Cl_mPersona{
     }
 
     ingresosD(): number{
-        return this.inversionBase() - this.calculardescuento();
+        return this.inversionBase() - this.calcularDescuento();
     }
     
 }

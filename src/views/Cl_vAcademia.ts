@@ -6,6 +6,9 @@ export default class Cl_vAcademia {
     private _vInscripcion: Cl_vInscripcion;
     private _lblIngresos: HTMLElement;
     private _lbldescuento: HTMLElement;
+    private _lblDescuentoIngles: HTMLElement;
+    private _lblDescuentoComputacion: HTMLElement;
+    private _lblDescuentoIA: HTMLElement;
     private _lblingresosD: HTMLElement;
     private _lblPTotal: HTMLElement;
     private _lblPIngles: HTMLElement;
@@ -20,6 +23,9 @@ export default class Cl_vAcademia {
         this._btInscribir = <HTMLButtonElement>document.getElementById("btInscribir");
         this._lblIngresos = <HTMLElement>document.getElementById("lblIngresos");
         this._lbldescuento = <HTMLElement>document.getElementById("lbldescuento");
+        this._lblDescuentoIngles = <HTMLElement>document.getElementById("lblDescuentoIngles");
+        this._lblDescuentoComputacion = <HTMLElement>document.getElementById("lblDescuentoComputacion");
+        this._lblDescuentoIA = <HTMLElement>document.getElementById("lblDescuentoIA");
         this._lblingresosD = <HTMLElement>document.getElementById("lblingresosD");
         this._lblPTotal = <HTMLElement>document.getElementById("lblPTotal");
         this._lblPIngles = <HTMLElement>document.getElementById("lblPIngles");
@@ -43,13 +49,16 @@ export default class Cl_vAcademia {
         if (this._contenedorReporte) {
         this._contenedorReporte.style.display = "none";
     }}
-    MostrarReporte(): void {
+    mostrarReporte(): void {
         if (this._contenedorReporte) {
         this._contenedorReporte.style.display = "block";
     }}
      reportarInscripcion(datos: IReporte): void {
         this._lblIngresos.textContent = datos.ingresos.toFixed(2);
         this._lbldescuento.textContent = datos.descuentos.toFixed(2);
+        this._lblDescuentoIngles.textContent = datos.descuentoIngles.toFixed(2);
+        this._lblDescuentoComputacion.textContent = datos.descuentoComputacion.toFixed(2);
+        this._lblDescuentoIA.textContent = datos.descuentoIA.toFixed(2);
         this._lblingresosD.textContent = datos.ingresosD.toFixed(2);
          this._lblPTotal.textContent = datos.pTotal.toFixed(0);
         this._lblPIngles.textContent = datos.pIngles.toFixed(2) + "%";
@@ -58,6 +67,6 @@ export default class Cl_vAcademia {
         this._lblPMenores.textContent = datos.pMenores.toFixed(2) + "%";
         this._lblPMayores.textContent = datos.pMayores.toFixed(2) + "%";
         this._lblPTercera.textContent = datos.pTerceraEdad.toFixed(2) + "%";
-        this.MostrarReporte();
+        this.mostrarReporte();
     }
 }

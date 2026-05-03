@@ -9,6 +9,9 @@ export default class Cl_mAcademia{
     private _contMayorEdad: number;
     private _contTerceraEdad: number;
     private _acumDescuento: number;
+    private _acumDescuentoIngles: number;
+    private _acumDescuentoComputacion: number;
+    private _acumDescuentoIA: number;
     private _acumInversion: number;
     private _acumIngresosD: number;
 
@@ -21,6 +24,9 @@ export default class Cl_mAcademia{
         this._contMayorEdad = 0;
         this._contTerceraEdad = 0;
         this._acumDescuento = 0;
+        this._acumDescuentoIngles = 0;
+        this._acumDescuentoComputacion = 0;
+        this._acumDescuentoIA = 0;
         this._acumInversion = 0;
         this._acumIngresosD = 0;
     }
@@ -38,21 +44,38 @@ export default class Cl_mAcademia{
     get acumIngresosD(): number{
         return this._acumIngresosD;
     }
-    procesarInscripcion(ins: Cl_mInscripcion): void{
+    get _contestudiantes(): number{
+        return this._contEstudiantes;
+    }
+    get acumDescuentoIngles(): number{
+        return this._acumDescuentoIngles;
+    }
+    get acumDescuentoComputacion(): number{
+        return this._acumDescuentoComputacion;
+    }
+    get acumDescuentoIA(): number{
+        return this._acumDescuentoIA;
+    }
+    
+    procesarInscripcion(ins: Cl_mInscripcion){
         this._contEstudiantes++;
-        if (ins.leerOpcion === 1)
-            this._contIngles++;
-        else if (ins.leerOpcion === 2)
+        if (ins.leerOpcion === 1){
+            this._acumDescuentoIngles += ins.calcularDescuento();  this._contIngles++;}
+            
+        if (ins.leerOpcion === 2){
             this._contComputacion++;
-        else if (ins.leerOpcion === 3)
+            this._acumDescuentoComputacion += ins.calcularDescuento();
+        }
+        if (ins.leerOpcion === 3){
             this._contIA++;
+            this._acumDescuentoIA += ins.calcularDescuento();}
         if (ins.edad < 18)
             this._contMenorEdad++;
         else if ((ins.edad >= 18 && ins.edad <= 50 && ins.sexo === "F") || (ins.edad >= 18 && ins.edad <= 60 && ins.sexo === "M"))
             this._contMayorEdad++;
         else if ((ins.edad > 50 && ins.sexo === "F") || (ins.edad > 60 && ins.sexo === "M"))
             this._contTerceraEdad++;
-        this._acumDescuento += ins.calculardescuento();
+        this._acumDescuento += ins.calcularDescuento();
         this._acumInversion += ins.inversionBase();
         this._acumIngresosD += ins.ingresosD();
         

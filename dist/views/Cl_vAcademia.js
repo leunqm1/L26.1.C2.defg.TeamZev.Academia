@@ -4,6 +4,9 @@ export default class Cl_vAcademia {
     _vInscripcion;
     _lblIngresos;
     _lbldescuento;
+    _lblDescuentoIngles;
+    _lblDescuentoComputacion;
+    _lblDescuentoIA;
     _lblingresosD;
     _lblPTotal;
     _lblPIngles;
@@ -17,6 +20,9 @@ export default class Cl_vAcademia {
         this._btInscribir = document.getElementById("btInscribir");
         this._lblIngresos = document.getElementById("lblIngresos");
         this._lbldescuento = document.getElementById("lbldescuento");
+        this._lblDescuentoIngles = document.getElementById("lblDescuentoIngles");
+        this._lblDescuentoComputacion = document.getElementById("lblDescuentoComputacion");
+        this._lblDescuentoIA = document.getElementById("lblDescuentoIA");
         this._lblingresosD = document.getElementById("lblingresosD");
         this._lblPTotal = document.getElementById("lblPTotal");
         this._lblPIngles = document.getElementById("lblPIngles");
@@ -38,7 +44,7 @@ export default class Cl_vAcademia {
             this._contenedorReporte.style.display = "none";
         }
     }
-    MostrarReporte() {
+    mostrarReporte() {
         if (this._contenedorReporte) {
             this._contenedorReporte.style.display = "block";
         }
@@ -46,6 +52,9 @@ export default class Cl_vAcademia {
     reportarInscripcion(datos) {
         this._lblIngresos.textContent = datos.ingresos.toFixed(2);
         this._lbldescuento.textContent = datos.descuentos.toFixed(2);
+        this._lblDescuentoIngles.textContent = datos.descuentoIngles.toFixed(2);
+        this._lblDescuentoComputacion.textContent = datos.descuentoComputacion.toFixed(2);
+        this._lblDescuentoIA.textContent = datos.descuentoIA.toFixed(2);
         this._lblingresosD.textContent = datos.ingresosD.toFixed(2);
         this._lblPTotal.textContent = datos.pTotal.toFixed(0);
         this._lblPIngles.textContent = datos.pIngles.toFixed(2) + "%";
@@ -54,7 +63,7 @@ export default class Cl_vAcademia {
         this._lblPMenores.textContent = datos.pMenores.toFixed(2) + "%";
         this._lblPMayores.textContent = datos.pMayores.toFixed(2) + "%";
         this._lblPTercera.textContent = datos.pTerceraEdad.toFixed(2) + "%";
-        this.MostrarReporte();
+        this.mostrarReporte();
     }
 }
 //# sourceMappingURL=Cl_vAcademia.js.map

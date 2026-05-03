@@ -15,6 +15,7 @@ export default class Cl_mAcademia {
     get acumDescuento(): number;
     get acumInversion(): number;
     get acumIngresosD(): number;
+    get _contestudiantes(): number;
     procesarInscripcion(ins: Cl_mInscripcion): void;
     porcIngles(): number;
     porcComputacion(): number;
